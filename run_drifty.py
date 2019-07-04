@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -77,7 +78,6 @@ message.setText('')
 win.flip()
 
 ntrials = len(questions)
-ntrials = 1
 clicks = []
 responses= []
 scales = []
@@ -348,17 +348,17 @@ for x in range(1,ntrials):
     word_lengths.append(word_length)
     
     if x % 55 == 0 and x != 0:  
-        block_num = x/55
+        block_num = int(x/55)
         if block_num == 5:
             sp_text = visual.TextStim(win, text="Press spacebar to end experiment.", height=.06,units='norm', pos =(0.0, -0.6))
         else:
             sp_text = visual.TextStim(win, text="Press the spacebar to begin next block.", height=.06,units='norm', pos =(0.0, -0.6))  
             
-    message = visual.TextStim(win, text = "End of block {} out of five blocks".format(block_num))
-    message.draw()
-    sp_text.draw()
-    win.flip()
-    event.waitKeys()
+            message = visual.TextStim(win, text = "End of block {}/5 blocks".format(block_num))
+            message.draw()
+            sp_text.draw()
+            win.flip()
+            event.waitKeys()
         
     
 data = pd.DataFrame({'id' :  ids, 
