@@ -1,5 +1,7 @@
 # drifty_self
 
-This will run scripts for the trait-adjective task collecting data points to fit a drift diffusion model.
+Scripts for behavioural experiment:
 
-Before trait-adjective task is a questionnaire portion.
+1) Questionnaires: see selfsurvey csv for list of questions
+
+2) Trait adjective task collecting data points to fit a drift diffusion model, words controlled for length
