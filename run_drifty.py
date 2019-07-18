@@ -360,18 +360,19 @@ for x in range(1,ntrials):
             win.flip()
             event.waitKeys()
         
-    
-data = pd.DataFrame({'id' :  ids, 
-                     'trial_number' : trial_numbers,
-                     'counterbalance' : cbs,
-                     'trial_type' : trial_types,
-                     'word_number': word_numbers,
-                     'word_length': word_lengths,
-                     'rt' : rts,
-                     'key_press' : key_presses,
-                     'response': responses})
+    # save the data with each iteration
+    data = pd.DataFrame({'id' :  ids, 
+                         'trial_number' : trial_numbers,
+                         'counterbalance' : cbs,
+                         'trial_type' : trial_types,
+                         'word_number': word_numbers,
+                         'word_length': word_lengths,
+                         'rt' : rts,
+                         'key_press' : key_presses,
+                         'response': responses})
 
-data.to_csv(file_name, sep=',', index = False, na_rep='na', header=True)
+    data.to_csv(file_name, sep=',', index = False, na_rep='na', header=True)
+    
 win.close()
 core.quit()
 
